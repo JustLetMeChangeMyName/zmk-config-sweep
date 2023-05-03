@@ -33,10 +33,18 @@
     
      combos {
         compatible = "zmk,combos";
+        
         combo_esc {
             timeout-ms = <50>;
             key-positions = <0 1>;
             bindings = <&kp ESC>;
+        };
+        
+        combo_del {
+            timeout-ms = <50>;
+            key-positions = <1 2>;
+            bindings = <&kp DEL>;
+            layers = <1>;
         };
     };
     
@@ -68,8 +76,8 @@
         //│ DELETE   │  1       │  2       │  3       │  0       │   │ PAGE DN  │ LEFT     │ DOWN     │ RIGHT    │          │
             &kp DEL    &kp N1     &kp N2     &kp N3     &kp N0         &kp PG_DN  &kp LARW   &kp DARW   &kp RARW   &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ CAPS     │  7       │  8       │  9       │          │   │          │  +       │  -       │  *       │  /       │
-           &caps_word  &kp N7     &kp N8     &kp N9     &trans         &trans     &kp PLUS   &kp MINUS  &kp ASTRK  &kp SLASH
+        //│ CAPS     │  7       │  8       │  9       │          │   │ . >      │  +       │  -       │  *       │  /       │
+           &caps_word  &kp N7     &kp N8     &kp N9     &trans         &kp DOT     &kp PLUS   &kp MINUS  &kp ASTRK  &kp SLASH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &kp ESC        &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
