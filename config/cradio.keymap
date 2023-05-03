@@ -85,8 +85,8 @@
         //│  !       │  @       │  #       │  $       │  %       │   │          │          │  =       │  \       │  '       │
             &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT      &trans     &trans     &kp EQUAL  &kp BSLH   &kp APOS
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │  &       │  _       │          │  │       │          │
-            &trans     &trans     &trans     &trans     &trans         &kp AMPS   &kp UNDER  &trans     &kp PIPE   &trans
+        //│  PSCRN   │          │          │          │          │   │  &       │  _       │          │  │       │          │
+            &kp PSCRN  &trans     &trans     &trans     &trans         &kp AMPS   &kp UNDER  &trans     &kp PIPE   &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
