@@ -10,6 +10,11 @@
 #define HRMR(k1,k2,k3) &ht RGUI k1  &ht RCTRL k2  &ht RALT k3
 
 / {
+&sk {  // sticky-key config
+    release-after-ms = <600>;  // release after 0.6s
+    quick-release;             // no double capitalization when rolling keys
+};
+
     behaviors {
         ht: hold_tap {
             label = "hold_tap";
@@ -21,6 +26,15 @@
             global-quick-tap;
             bindings = <&kp>, <&kp>;
         };
+        tds: tap_dance_shift {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_SHIFT";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&sk LSHIFT>, <&caps_word>;
+        };
+        
+        
     };
 
     conditional_layers {
@@ -72,7 +86,7 @@
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp K      &kp M      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |          |   |          |          |
-                                            &lt 2 BSPC  &kp LSHFT      &kp ENTER  &lt 1 SPACE
+                                            &lt 2 BSPC  &tds           &kp ENTER  &lt 1 SPACE
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
