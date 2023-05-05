@@ -6,10 +6,18 @@
 #include <dt-bindings/zmk/bt.h>
 
 // Home row mods macro
-#define HRML(k1,k2,k3,k4) &ht LSHFT k1  &ht LALT k2  &ht LCTRL k3  &ht LGUI k4
-#define HRMR(k1,k2,k3,k4) &ht RGUI k1  &ht RCTRL k2  &ht RALT k3  &ht RSHFT k4
+#define HRML(k1,k2,k3) &ht LALT k1  &ht LCTRL k2  &ht LGUI k3
+#define HRMR(k1,k2,k3) &ht RGUI k1  &ht RCTRL k2  &ht RALT k3
+
+
+&sk {  // sticky-key config
+    release-after-ms = <600>;  // release after 0.6s
+    quick-release;             // no double capitalization when rolling keys
+};
+
 
 / {
+
     behaviors {
         ht: hold_tap {
             label = "hold_tap";
@@ -21,6 +29,15 @@
             global-quick-tap;
             bindings = <&kp>, <&kp>;
         };
+        tds: tap_dance_shift {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_SHIFT";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&sk LSHIFT>, <&caps_word>;
+        };
+        
+        
     };
 
     conditional_layers {
@@ -46,6 +63,15 @@
             bindings = <&kp DEL>;
             layers = <0>;
         };
+        
+        combo_tab {
+            timeout-ms = <50>;
+            key-positions = <10 11>;
+            bindings = <&kp TAB>;
+            layers = <0>;
+        };
+        
+        
     };
     
     keymap {
@@ -57,13 +83,13 @@
             &kp Q      &kp W      &kp F      &kp P      &kp G          &kp J      &kp L      &kp U      &kp Y      &kp SEMI
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  R       │  S       │  T       │  D       │   │  H       │  N       │  E       │  I       │  O       │
-            HRML(A,        R,         S,         T)     &kp D          &kp H      HRMR(N,        E,         I,        O)
+            &kp A      HRML(R,         S,         T)     &kp D         &kp H      HRMR(N,        E,         I)     &kp O
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  K       │  M       │ , <      │ . >      │ / ?      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp K      &kp M      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |          |   |          |          |
-                                            &lt 2 BSPC   &kp TAB      &kp ENTER  &lt 1 SPACE
+                                            &lt 2 BSPC  &tds           &kp ENTER  &lt 1 SPACE
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -74,11 +100,11 @@
         //│ INSERT   │  4       │  5       │  6       │          │   │ PAGE UP  │  HOME    │  UP      │ END      │          │
             &kp INS    &kp N4     &kp N5     &kp N6     &trans         &kp PG_UP  &kp HOME   &kp UARW   &kp END    &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ DELETE   │  1       │  2       │  3       │  0       │   │ PAGE DN  │ LEFT     │ DOWN     │ RIGHT    │          │
-            &kp DEL    &kp N1     &kp N2     &kp N3     &kp N0         &kp PG_DN  &kp LARW   &kp DARW   &kp RARW   &trans
+        //│ DELETE   │  1       │  2       │  3       │  0       │   │ PAGE DN  │ LEFT     │ DOWN     │ RIGHT    │  =       │
+            &kp DEL    &kp N1     &kp N2     &kp N3     &kp N0         &kp PG_DN  &kp LARW   &kp DARW   &kp RARW   &kp EQUAL
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ CAPS     │  7       │  8       │  9       │          │   │ . >      │  +       │  -       │  *       │  /       │
-           &caps_word  &kp N7     &kp N8     &kp N9     &trans         &kp DOT     &kp PLUS   &kp MINUS  &kp ASTRK  &kp SLASH
+           &caps_word  &kp N7     &kp N8     &kp N9     &trans         &kp DOT    &kp PLUS   &kp MINUS  &kp ASTRK  &kp SLASH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |  0       |   |          |          |
                                              &trans     &kp N0        &trans     &trans
