@@ -29,14 +29,22 @@
             global-quick-tap;
             bindings = <&kp>, <&kp>;
         };
+        
         tds: tap_dance_shift {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_SHIFT";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&sk LSHIFT>, <&caps_word>;
+            bindings = <&mt RSHIFT &sk LSHIFT>, <&caps_word>;
         };
         
+        rshft!: rshft_! {
+            compatible = "zmk,behavior-mod-morph";
+            label = "RSHFT_!";
+            #binding-cells = <0>;
+            bindings = <&kp FSLH>, <&kp EXCL>;
+            mods = <(MOD_RSFT)>;
+
         
     };
 
