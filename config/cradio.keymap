@@ -71,7 +71,7 @@
         compatible = "zmk,conditional-layers";
         tri_layer {
             if-layers = <RIGHTL LEFTL>;
-            then-layer = <SYSTEML>;
+            then-layer = <SYSL>;
         };
     };
     
