@@ -38,9 +38,9 @@
             bindings = <&mt RSHIFT &sk LSHIFT>, <&caps_word>;
         };
         
-        rshft!: rshft_! {
+        fslexcl: fsl_excl {
             compatible = "zmk,behavior-mod-morph";
-            label = "RSHFT_!";
+            label = "FSL_EXCL";
             #binding-cells = <0>;
             bindings = <&kp FSLH>, <&kp EXCL>;
             mods = <(MOD_RSFT)>;
@@ -101,7 +101,7 @@
             &kp A      HRML(R,         S,         T)     &kp D         &kp H      HRMR(N,        E,         I)     &kp O
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  K       │  M       │ , <      │ . >      │ / ?      │
-            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp K      &kp M      &kp COMMA  &kp DOT    &kp FSLH
+            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp K      &kp M      &kp COMMA  &kp DOT    &fslexcl
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |          |   |          |          |
                                             &lt 2 BSPC  &tds           &kp ENTER  &lt 1 SPACE
