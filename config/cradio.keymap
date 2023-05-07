@@ -8,10 +8,10 @@
 #include "../config/keypos_34keys.h"
 
 #define DEFAULT 0
-#define RIGHT   1
-#define LEFT    2
-#define SYSTEM  3
-#define NUM     4
+#define RIGHTL   1
+#define LEFTL    2
+#define SYSL  3
+#define NUML     4
 
 
 
@@ -50,10 +50,10 @@
         
         ntd: num_tap_dance {
             compatible = "zmk,behavior-tap-dance";
-            label = "NUM_TAP_DANCE;
+            label = "NUM_TAP_DANCE";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&lt LEFT BSPC>, <&tog NUM>;
+            bindings = <&lt LEFTL BSPC>, <&tog NUML>;
     };
 
         
@@ -70,8 +70,8 @@
     conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
-            if-layers = <RIGHT LEFT>;
-            then-layer = <SYSTEM>;
+            if-layers = <RIGHTL LEFTL>;
+            then-layer = <SYSTEML>;
         };
     };
     
@@ -132,7 +132,7 @@
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp K      &kp M      &kp COMMA  &kp DOT    &fslexcl
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |          |   |          |          |
-                                           &lt LEFT BSPC  &tds         &kp ENTER  &lt RIGHT SPACE
+                                           &ntd         &tds         &kp ENTER  &lt RIGHTL SPACE
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -204,7 +204,7 @@
             &kp SLASH  &kp ASTRK  &kp MINUS  &kp PLUS   &kp DOT         &kp DOT    &kp PLUS   &kp MINUS  &kp ASTRK  &kp SLASH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |          |   |          |          |
-                                             &kp BSPC   &tog NUM       &trans     &trans
+                                             &kp BSPC   &tog NUML       &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
