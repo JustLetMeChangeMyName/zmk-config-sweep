@@ -7,14 +7,13 @@
 
 #include "../config/keypos_34keys.h"
 
+#define DEFAULT 0
+#define RIGHT   1
+#define LEFT    2
+#define SYSTEM  3
+#define NUM     4
 
-//  key position reference
-//  ╭─────────────────────┬─────────────────────╮
-//  │ LT4 LT3 LT2 LT1 LT0 │ RT0 RT1 RT2 RT3 RT4 │
-//  │ LM4 LM3 LM2 LM1 LM0 │ RM0 RM1 RM2 RM3 RM4 │
-//  │ LB4 LB3 LB2 LB1 LB0 │ RB0 RB1 RB2 RB3 RB4 │
-//  ╰───────────╮ LH1 LH0 │ RH0 RH1 ╭───────────╯
-//              ╰─────────┴─────────╯
+
 
 // Home row mods macro
 #define HRML(k1,k2,k3) &ht LALT k1  &ht LCTRL k2  &ht LGUI k3
@@ -49,6 +48,15 @@
             bindings = <&sk LSHIFT>, <&caps_word>;
         };
         
+        ntd: num_tap_dance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "NUM_TAP_DANCE;
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&lt LEFT BSPC>, <&tog NUM>;
+    };
+
+        
         fslexcl: fsl_excl {
             compatible = "zmk,behavior-mod-morph";
             label = "FSL_EXCL";
@@ -62,11 +70,20 @@
     conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
-            if-layers = <1 2>;
-            then-layer = <3>;
+            if-layers = <RIGHT LEFT>;
+            then-layer = <SYSTEM>;
         };
     };
     
+    
+//  key position reference
+//  ╭─────────────────────┬─────────────────────╮
+//  │ LT4 LT3 LT2 LT1 LT0 │ RT0 RT1 RT2 RT3 RT4 │
+//  │ LM4 LM3 LM2 LM1 LM0 │ RM0 RM1 RM2 RM3 RM4 │
+//  │ LB4 LB3 LB2 LB1 LB0 │ RB0 RB1 RB2 RB3 RB4 │
+//  ╰───────────╮ LH1 LH0 │ RH0 RH1 ╭───────────╯
+//              ╰─────────┴─────────╯
+
      combos {
         compatible = "zmk,combos";
         
@@ -78,23 +95,23 @@
         
         combo_del {
             timeout-ms = <50>;
-            key-positions = <1 2>;
+            key-positions = <LT3 LT2>;
             bindings = <&kp DEL>;
-            layers = <0>;
+            layers = <DEFAULT>;
         };
         
         combo_tab {
             timeout-ms = <50>;
-            key-positions = <10 11>;
+            key-positions = <LM4 LM3>;
             bindings = <&kp TAB>;
-            layers = <0>;
+            layers = <DEFAULT>;
         };
         
         combo_word_backspace {
             timeout-ms = <50>;
-            key-positions = <30 33>;
+            key-positions = <LH1 RH1>;
             bindings = <&kp LC(BSPC)>;
-            layers = <0>;
+            layers = <DEFAULT>;
         };
         
         
@@ -115,7 +132,7 @@
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp K      &kp M      &kp COMMA  &kp DOT    &fslexcl
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |          |   |          |          |
-                                            &lt 2 BSPC  &tds           &kp ENTER  &lt 1 SPACE
+                                           &lt LEFT BSPC  &tds         &kp ENTER  &lt RIGHT SPACE
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -173,5 +190,24 @@
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
+        
+        num_layer {
+            bindings = <
+        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│ 5        │  6       │  7       │  8       │  9       │   │ PAGE UP  │  HOME    │  UP      │ END      │          │
+            &kp N5     &kp N6     &kp N7     &kp N8     &kp N9         &kp PG_UP  &kp HOME   &kp UARW   &kp END    &trans
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│ 1        │  2       │  3       │  4       │  0       │   │ PAGE DN  │ LEFT     │ DOWN     │ RIGHT    │  =       │
+            &kp N1     &kp N2     &kp N3     &kp N4     &kp N0         &kp PG_DN  &kp LARW   &kp DARW   &kp RARW   &kp EQUAL
+        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│ /        │  *       │  -       │  +       │ .        │   │ . >      │  +       │  -       │  *       │  /       │
+            &kp SLASH  &kp ASTRK  &kp MINUS  &kp PLUS   &kp DOT         &kp DOT    &kp PLUS   &kp MINUS  &kp ASTRK  &kp SLASH
+        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+        //                                 |          |          |   |          |          |
+                                             &kp BSPC   &tog NUM       &trans     &trans
+        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
+
     };
 };
