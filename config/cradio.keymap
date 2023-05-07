@@ -4,7 +4,8 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-#include "../zmk-nodefree-config/keypos_def/keypos_34keys.h"
+
+#include "../zmk-config-sweep/config/keypos_34keys.h"
 
 
 //  key position reference
