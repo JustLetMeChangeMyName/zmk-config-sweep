@@ -141,6 +141,12 @@
             bindings = <&tog NUML>;
             layers = <DEFAULT NUML>;
         };
+        
+        combo_ctrl_f {
+            timeout-ms = <50>;
+            key-positions = <LT2 LM2>;
+            bindings = <&kp LC(F)>;
+        };
 
     };
     
