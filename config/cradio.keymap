@@ -178,7 +178,7 @@
             &kp A      HRML(R,         S,         T)     &kp D         &kp H      HRMR(N,        E,         I)     &kp O
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  K       │  M       │ , ;      │ . :      │ / ?      │
-            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp K      &kp M   &pt SEMI COMMA  &kp COLON DOT  &kp FSLH
+            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp K      &kp M   &pt SEMI COMMA  &pt COLON DOT  &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |          |   |          |          |
                                           &lt LEFTL BSPC &tds          &kp ENTER  &lt RIGHTL SPACE
