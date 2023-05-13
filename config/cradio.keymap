@@ -40,8 +40,8 @@
             global-quick-tap;
             bindings = <&kp>, <&kp>;
         };
-        pt: punc_tap {
-            label = "punc_tap";
+        pt: punctuation_tap {
+            label = "punctuation_tap";
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
