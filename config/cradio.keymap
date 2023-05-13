@@ -66,13 +66,13 @@
 //    };
 
         
-//        fslexcl: fsl_excl {
-//            compatible = "zmk,behavior-mod-morph";
-//            label = "FSL_EXCL";
-//            #binding-cells = <0>;
-//            bindings = <&kp FSLH>, <&kp EXCL>;
-//            mods = <(MOD_RSFT)>;
-//        };
+        wdel: word_del {
+            compatible = "zmk,behavior-mod-morph";
+            label = "WORD_DEL";
+            #binding-cells = <0>;
+            bindings = <&kp LC(BSPC)>, <&kp LC(DEL)>;
+            mods = <(MOD_RCTL)>;
+        };
         
     };
 
@@ -119,7 +119,7 @@
         combo_word_backspace {
             timeout-ms = <75>;
             key-positions = <LH1 RH1>;
-            bindings = <&kp LC(BSPC)>;
+            bindings = <&wdel>;
             layers = <DEFAULT>;
         };
 
@@ -178,7 +178,7 @@
             &kp A      HRML(R,         S,         T)     &kp D         &kp H      HRMR(N,        E,         I)     &kp O
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  K       │  M       │ , ;      │ . :      │ / ?      │
-            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp K      &kp M   &pt SEMI COMMA  &pt COLON DOT  &kp FSLH
+            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp K      &kp M   &pt SEMI COMMA  &pt COLON DOT  &pt EXCL FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |          |   |          |          |
                                           &lt LEFTL BSPC &sk LSHIFT    &kp ENTER  &lt RIGHTL SPACE
