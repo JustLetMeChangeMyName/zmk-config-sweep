@@ -133,7 +133,7 @@
             timeout-ms = <50>;
             key-positions = <LM2 LM3>;
             bindings = <&kp ENTER>;
-            layers = <DEFAULT>;
+            layers = <DEFAULT NUML>;
         };
         combo_word_backspace {
             timeout-ms = <75>;
