@@ -193,7 +193,7 @@
             &kp MINUS  &kp N7     &kp N8     &kp N9     &kp PLUS       &kp PG_UP  &kp HOME   &kp UARW   &kp END    &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ /        │  4       │  5       │  6       │  *       │   │ PAGE DN  │ LEFT     │ DOWN     │ RIGHT    │  =       │
-            &kp EQUAL  &kp N4     &kp N5     &kp N6     &kp ASTRK      &kp PG_DN  &kp LARW   &kp DARW   &kp RARW   &kp EQUAL
+            &kp FSLH   &kp N4     &kp N5     &kp N6     &kp ASTRK      &kp PG_DN  &kp LARW   &kp DARW   &kp RARW   &kp EQUAL
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  1       │  2       │  3       │  .       │   │ . >      │  +       │  -       │  *       │  /       │
             &kp SPACE  &kp N1     &kp N2     &kp N3     &kp DOT        &kp DOT    &kp PLUS   &kp MINUS  &kp ASTRK  &kp SLASH
