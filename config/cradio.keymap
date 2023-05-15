@@ -57,21 +57,23 @@
             bindings = <&kp>, <&sk>;
         };
         
-        tds: tap_dance_shift {
+ /*       tds: tap_dance_shift {
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_SHIFT";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&sk LSHIFT>, <&caps_word>;
-        };
+        }; 
+*/
         
-//        ntd: num_tap_dance {
-//            compatible = "zmk,behavior-tap-dance";
-//            label = "NUM_TAP_DANCE";
-//            #binding-cells = <0>;
-//            tapping-term-ms = <300>;
-//            bindings = <&lt LEFTL BSPC>, <&tog NUML>;
-//    };
+/*        ntd: num_tap_dance {
+            compatible = "zmk,behavior-tap-dance";
+            label = "NUM_TAP_DANCE";
+            #binding-cells = <0>;
+            tapping-term-ms = <300>;
+            bindings = <&lt LEFTL BSPC>, <&tog NUML>;
+    }; 
+*/
 
         
         wdel: word_del {
@@ -109,76 +111,76 @@
             key-positions = <LT4 LT3>;
             bindings = <&kp ESC>;
         };
-        
         combo_del {
             timeout-ms = <50>;
             key-positions = <LT3 LT2>;
             bindings = <&kp DEL>;
             layers = <DEFAULT>;
         };
-        
         combo_tab {
             timeout-ms = <50>;
             key-positions = <LM4 LM3>;
             bindings = <&kp TAB>;
             layers = <DEFAULT>;
         };
-        
+         combo_enter_r {
+            timeout-ms = <50>;
+            key-positions = <RM2 RM3>;
+            bindings = <&kp ENTER>;
+            layers = <DEFAULT>;
+        };
+         combo_enter_l {
+            timeout-ms = <50>;
+            key-positions = <LM2 LM3>;
+            bindings = <&kp ENTER>;
+            layers = <DEFAULT>;
+        };
         combo_word_backspace {
             timeout-ms = <75>;
             key-positions = <LH1 RH1>;
             bindings = <&wdel>;
             layers = <DEFAULT>;
         };
-
         combo_pinkie_word_backspace {
             timeout-ms = <50>;
             key-positions = <LM4 RM4>;
             bindings = <&kp LC(DEL)>;
             layers = <DEFAULT>;
         };
-
         combo_equal {
             timeout-ms = <50>;
             key-positions = <LT0 LT1>;
             bindings = <&kp EQUAL>;
             layers = <RIGHTL NUML>;
         };
-
         combo_divide {
             timeout-ms = <50>;
             key-positions = <LM0 LM1>;
             bindings = <&kp SLASH>;
             layers = <NUML>;
         };
-        
         combo_quote {
             timeout-ms = <50>;
             key-positions = <LB0 LB1>;
             bindings = <&kp DQT>;
             layers = <NUML>;
         };
-        
         combo_num_layer {
             timeout-ms = <50>;
             key-positions = <LM1 LM3>;
             bindings = <&tog NUML>;
             layers = <DEFAULT NUML>;
         };
-        
         combo_ctrl_f {
             timeout-ms = <50>;
             key-positions = <LT2 LM2>;
             bindings = <&kp LC(F)>;
         };
-        
         combo_at {
             timeout-ms = <40>;
             key-positions = <LM4 LM1>;
             bindings = <&kp AT>;
         };
-
-
     };
     
     keymap {
@@ -259,7 +261,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  -       │  7       │  8       │  9       │  +       │   │ PAGE UP  │  HOME    │  UP      │ END      │          │
-            &kp MINUS  &kp N7     &kp N8     &kp N9     &kp PLUS       &kp PG_UP  &kp HOME   &kp UARW   &kp END    &none
+            &kp MINUS  &kp N7     &kp N8     &kp N9     &kp PLUS       &kp PG_UP  &kp HOME   &kp UARW   &kp END    &mo CONTL
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  /       │  4       │  5       │  6       │  *       │   │ PAGE DN  │ LEFT     │ DOWN     │ RIGHT    │  =       │
             &kp SLASH  &kp N4     &kp N5     &kp N6     &kp ASTRK      &kp PG_DN  &kp LARW   &kp DARW   &kp RARW   &kp EQUAL
