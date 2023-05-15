@@ -48,6 +48,14 @@
             tapping-term-ms = <180>;
             bindings = <&kp>, <&kp>;
         };
+        stt: sticky_tap {
+            label = "sticky_tap";
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <150>;
+            bindings = <&kp>, <&sk>;
+        };
         
         tds: tap_dance_shift {
             compatible = "zmk,behavior-tap-dance";
@@ -66,13 +74,13 @@
 //    };
 
         
-//        fslexcl: fsl_excl {
-//            compatible = "zmk,behavior-mod-morph";
-//            label = "FSL_EXCL";
-//            #binding-cells = <0>;
-//            bindings = <&kp FSLH>, <&kp EXCL>;
-//            mods = <(MOD_RSFT)>;
-//        };
+        wdel: word_del {
+            compatible = "zmk,behavior-mod-morph";
+            label = "WORD_DEL";
+            #binding-cells = <0>;
+            bindings = <&kp LC(BSPC)>, <&kp LC(DEL)>;
+            mods = <(MOD_RCTL)>;
+        };
         
     };
 
@@ -119,7 +127,14 @@
         combo_word_backspace {
             timeout-ms = <75>;
             key-positions = <LH1 RH1>;
-            bindings = <&kp LC(BSPC)>;
+            bindings = <&wdel>;
+            layers = <DEFAULT>;
+        };
+
+        combo_pinkie_word_backspace {
+            timeout-ms = <50>;
+            key-positions = <LM4 RM4>;
+            bindings = <&kp LC(DEL)>;
             layers = <DEFAULT>;
         };
 
@@ -158,7 +173,7 @@
         };
         
         combo_at {
-            timeout-ms = <50>;
+            timeout-ms = <40>;
             key-positions = <LM4 LM1>;
             bindings = <&kp AT>;
         };
@@ -178,10 +193,10 @@
             &kp A      HRML(R,         S,         T)     &kp D         &kp H      HRMR(N,        E,         I)     &kp O
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  K       │  M       │ , ;      │ . :      │ / ?      │
-            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp K      &kp M   &pt SEMI COMMA  &pt COLON DOT  &kp FSLH
+            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp K      &kp M   &pt SEMI COMMA  &pt COLON DOT  &pt EXCL FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |          |   |          |          |
-                                          &lt LEFTL BSPC &sk LSHIFT    &kp ENTER  &lt RIGHTL SPACE
+                                       &lt LEFTL BSPC &stt LSHIFT LSHIFT    &kp ENTER  &lt RIGHTL SPACE
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -193,7 +208,7 @@
             &kp MINUS  &kp N7     &kp N8     &kp N9     &kp PLUS       &kp PG_UP  &kp HOME   &kp UARW   &kp END    &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ /        │  4       │  5       │  6       │  *       │   │ PAGE DN  │ LEFT     │ DOWN     │ RIGHT    │  =       │
-            &kp EQUAL  &kp N4     &kp N5     &kp N6     &kp ASTRK      &kp PG_DN  &kp LARW   &kp DARW   &kp RARW   &kp EQUAL
+            &kp FSLH   &kp N4     &kp N5     &kp N6     &kp ASTRK      &kp PG_DN  &kp LARW   &kp DARW   &kp RARW   &kp EQUAL
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  1       │  2       │  3       │  .       │   │ . >      │  +       │  -       │  *       │  /       │
             &kp SPACE  &kp N1     &kp N2     &kp N3     &kp DOT        &kp DOT    &kp PLUS   &kp MINUS  &kp ASTRK  &kp SLASH
