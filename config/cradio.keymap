@@ -48,6 +48,14 @@
             tapping-term-ms = <180>;
             bindings = <&kp>, <&kp>;
         };
+        stt: sticky_tap {
+            label = "sticky_tap";
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <150>;
+            bindings = <&kp>, <&st>;
+        };
         
         tds: tap_dance_shift {
             compatible = "zmk,behavior-tap-dance";
@@ -123,6 +131,13 @@
             layers = <DEFAULT>;
         };
 
+        combo_pinkie_word_backspace {
+            timeout-ms = <50>;
+            key-positions = <LM4 RM4>;
+            bindings = <&kp LC(DEL)>;
+            layers = <DEFAULT>;
+        };
+
         combo_equal {
             timeout-ms = <50>;
             key-positions = <LT0 LT1>;
@@ -158,7 +173,7 @@
         };
         
         combo_at {
-            timeout-ms = <50>;
+            timeout-ms = <40>;
             key-positions = <LM4 LM1>;
             bindings = <&kp AT>;
         };
@@ -181,7 +196,7 @@
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp K      &kp M   &pt SEMI COMMA  &pt COLON DOT  &pt EXCL FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |          |   |          |          |
-                                          &lt LEFTL BSPC &sk LSHIFT    &kp ENTER  &lt RIGHTL SPACE
+                                       &lt LEFTL BSPC &stt LSHIFT LSHIFT    &kp ENTER  &lt RIGHTL SPACE
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
