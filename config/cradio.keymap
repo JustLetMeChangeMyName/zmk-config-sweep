@@ -105,7 +105,7 @@
         };
 
     };
-    
+
     
     
 //  key position reference
@@ -205,11 +205,12 @@
             key-positions = <LM2 LB2>;
             bindings = <&kp LC(LS(TAB))>;
         };
-        combo_type_variable {
+/*        combo_type_variable {
             timeout-ms = <60>;
             hey-positions = <LT4 LM4 LB4>;
             bindings = <&type_variable>;
         };
+*/
     };
     
     keymap {
