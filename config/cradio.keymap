@@ -163,7 +163,7 @@
             timeout-ms = <50>;
             key-positions = <LB0 LB1>;
             bindings = <&kp DQT>;
-            layers = <NUML>;
+            layers = <NUML RIGHTL>;
         };
         combo_num_layer {
             timeout-ms = <50>;
@@ -198,7 +198,7 @@
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp K      &kp M   &pt SEMI COMMA  &pt COLON DOT  &pt EXCL FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |          |   |          |          |
-                                       &lt LEFTL BSPC &stt LSHIFT LSHIFT    &kp ENTER  &lt RIGHTL SPACE
+                              &lt LEFTL BSPC  &stt LSHIFT LSHIFT       &stt RSHIFT RSHIFT  &lt RIGHTL SPACE
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -279,13 +279,13 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │          │          │          │          │          │
-            &none      &none      &none      &none      &none       &kp C_VOL_DN &kp C_VOL_UP &kp C_PP  &none      &none
+            &none      &none      &none      &none      &none      &kp C_VOL_DN &kp C_VOL_UP &kp C_PP   &none      &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
-            &none      &none      &none      &none      &none          &none      &none      &none      &none      &none 
+            &none      &none      &none      &none      &none      &kp C_BRI_UP &kp C_BRI_DN &none      &none      &none 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
-            &none      &none      &none      &none      &none          &none      &none      &none      &none      &none 
+            &none      &none      &none      &none      &none      &kp C_SLEEP    &none      &none      &none      &none 
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |          |   |          |          |
                                              &none      &none          &none      &none
