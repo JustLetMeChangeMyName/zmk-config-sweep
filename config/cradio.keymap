@@ -101,7 +101,9 @@
         #binding-cells = <0>;
         wait-ms = <40>;
         tap-ms = <40>;
-        bindings = <&kp S &kp H &kp O &kp W &kp E &kp R &kp D &kp O &kp O &kp R &kp H &kp E &kp I &kp G &kp H &kp T &kp I &kp N>;
+        bindings = <&kp C &kp A &kp L>, <&kp ENTER>, <&macro_wait_time 500>, <&kp TAB>
+            , <&kp S &kp H &kp O &kp W &kp E &kp R &kp D &kp O &kp O &kp R &kp H &kp E &kp I &kp G &kp H &kp T &kp I &kp N>
+            , <&kp TAB &kp LT &kp TAB>;
         };
 
         type_variable_2: type_variable_2 {
