@@ -216,12 +216,12 @@
         };
         combo_type_variable {
             timeout-ms = <60>;
-            key-positions = <LT4 LM4 LB4>;
+            key-positions = <LM2 LM1>;
             bindings = <&type_variable>;
         };
         combo_type_variable_2 {
             timeout-ms = <60>;
-            key-positions = <LT3 LM3 LB3>;
+            key-positions = <LB2 LB1>;
             bindings = <&type_variable_2>;
         };
 
