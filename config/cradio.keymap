@@ -55,28 +55,7 @@
             flavor = "hold-preferred";
             tapping-term-ms = <150>;
             bindings = <&kp>, <&sk>;
-        };
-        
- /*       tds: tap_dance_shift {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_SHIFT";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&sk LSHIFT>, <&caps_word>;
-        }; 
-*/
-        
-/*        ntd: num_tap_dance {
-            compatible = "zmk,behavior-tap-dance";
-            label = "NUM_TAP_DANCE";
-            #binding-cells = <0>;
-            tapping-term-ms = <300>;
-            bindings = <&lt LEFTL BSPC>, <&tog NUML>;
-    }; 
-*/
-
-        
-        
+        };        
     };
 
     conditional_layers {
@@ -85,29 +64,6 @@
             if-layers = <RIGHTL LEFTL>;
             then-layer = <SYSL>;
         };
-    };
-    
-    macros {
-        type_variable: type_variable {
-        compatible = "zmk,behavior-macro";
-        label = "ZM_type_variable";
-        #binding-cells = <0>;
-        wait-ms = <40>;
-        tap-ms = <40>;
-        bindings = <&kp C &kp A &kp L>, <&macro_wait_time 1500>, <&kp ENTER>, <&kp TAB>, <&macro_wait_time 40>
-            , <&kp S &kp H &kp O &kp W &kp E &kp R &kp D &kp O &kp O &kp R &kp H &kp E &kp I &kp G &kp H &kp T &kp I &kp N>
-            , <&kp TAB &kp LT &kp TAB>;
-        };
-
-        type_variable_2: type_variable_2 {
-        compatible = "zmk,behavior-macro";
-        label = "ZM_type_variable_2";
-        #binding-cells = <0>;
-        wait-ms = <40>;
-        tap-ms = <40>;
-        bindings = <&kp C &kp A &kp L>;
-        };
-
     };
 
     
@@ -156,7 +112,7 @@
             bindings = <&kp LC(BSPC)>;
             layers = <DEFAULT NUML>;
         };
-        combo_pinkie_word_delete {
+        combo_word_delete {
             timeout-ms = <50>;
             key-positions = <LM4 RM4>;
             bindings = <&kp LC(DEL)>;
@@ -172,7 +128,7 @@
             timeout-ms = <50>;
             key-positions = <LB0 LB1>;
             bindings = <&kp DQT>;
-            layers = <NUML RIGHTL>;
+            layers = <RIGHTL NUML>;
         };
         combo_num_layer {
             timeout-ms = <50>;
@@ -254,8 +210,8 @@
         //│  !       │  @       │  #       │  $       │  %       │   │          │          │  =       │  \       │  '       │
             &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT      &trans     &trans     &kp EQUAL  &kp BSLH   &kp APOS
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  PSCRN   │CAPS WORD │CAPS LOCK │          │          │   │  &       │  _       │          │  │       │          │
-           &kp PSCRN  &caps_word  &kp CAPS     &trans     &trans         &kp AMPS   &kp UNDER  &trans     &kp PIPE   &trans
+        //│  PSCRN   │CAPS WORD │CAPS LOCK │          │          │   │  &       │  _       │          │  │       │  \       │
+           &kp PSCRN  &caps_word  &kp CAPS     &trans     &trans         &kp AMPS   &kp UNDER  &trans     &kp PIPE   &kp BSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |          |   |          |          |
                                              &trans     &trans         &trans     &trans
