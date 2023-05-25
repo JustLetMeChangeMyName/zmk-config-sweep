@@ -76,13 +76,6 @@
 */
 
         
-        wdel: word_del {
-            compatible = "zmk,behavior-mod-morph";
-            label = "WORD_DEL";
-            #binding-cells = <0>;
-            bindings = <&kp LC(BSPC)>, <&kp LC(DEL)>;
-            mods = <(MOD_RCTL)>;
-        };
         
     };
 
@@ -139,33 +132,31 @@
             timeout-ms = <50>;
             key-positions = <LT3 LT2>;
             bindings = <&kp DEL>;
-            layers = <DEFAULT>;
+            layers = <DEFAULT NUML>;
         };
         combo_tab {
             timeout-ms = <50>;
             key-positions = <LM4 LM3>;
             bindings = <&kp TAB>;
-            layers = <DEFAULT>;
+            layers = <DEFAULT NUML>;
         };
          combo_enter_r {
             timeout-ms = <50>;
             key-positions = <RM2 RM3>;
             bindings = <&kp ENTER>;
-            layers = <DEFAULT NUML RIGHTL>;
         };
          combo_enter_l {
             timeout-ms = <50>;
             key-positions = <LM2 LM3>;
             bindings = <&kp ENTER>;
-            layers = <DEFAULT NUML RIGHTL>;
         };
         combo_word_backspace {
             timeout-ms = <75>;
             key-positions = <LH1 RH1>;
-            bindings = <&wdel>;
-            layers = <DEFAULT>;
+            bindings = <&kp LC(BSPC)>;
+            layers = <DEFAULT NUML>;
         };
-        combo_pinkie_word_backspace {
+        combo_pinkie_word_delete {
             timeout-ms = <50>;
             key-positions = <LM4 RM4>;
             bindings = <&kp LC(DEL)>;
@@ -176,12 +167,6 @@
             key-positions = <LT0 LT1>;
             bindings = <&kp EQUAL>;
             layers = <RIGHTL NUML>;
-        };
-        combo_divide {
-            timeout-ms = <50>;
-            key-positions = <LM0 LM1>;
-            bindings = <&kp SLASH>;
-            layers = <NUML>;
         };
         combo_quote {
             timeout-ms = <50>;
@@ -199,6 +184,7 @@
             timeout-ms = <50>;
             key-positions = <LT2 LM2>;
             bindings = <&kp LC(F)>;
+            layers = <DEFAULT NUML>;
         };
         combo_at {
             timeout-ms = <40>;
@@ -214,7 +200,7 @@
         };
         combo_previous_tab {
             timeout-ms = <40>;
-            key-positions = <LM0 LB1>;
+            key-positions = <LM0 LM1>;
             bindings = <&kp LC(LS(TAB))>;
             layers = <DEFAULT>;
         };
