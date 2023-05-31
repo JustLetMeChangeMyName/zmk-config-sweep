@@ -55,35 +55,7 @@
             flavor = "hold-preferred";
             tapping-term-ms = <150>;
             bindings = <&kp>, <&sk>;
-        };
-        
- /*       tds: tap_dance_shift {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_SHIFT";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&sk LSHIFT>, <&caps_word>;
-        }; 
-*/
-        
-/*        ntd: num_tap_dance {
-            compatible = "zmk,behavior-tap-dance";
-            label = "NUM_TAP_DANCE";
-            #binding-cells = <0>;
-            tapping-term-ms = <300>;
-            bindings = <&lt LEFTL BSPC>, <&tog NUML>;
-    }; 
-*/
-
-        
-        wdel: word_del {
-            compatible = "zmk,behavior-mod-morph";
-            label = "WORD_DEL";
-            #binding-cells = <0>;
-            bindings = <&kp LC(BSPC)>, <&kp LC(DEL)>;
-            mods = <(MOD_RCTL)>;
-        };
-        
+        };        
     };
 
     conditional_layers {
@@ -93,6 +65,7 @@
             then-layer = <SYSL>;
         };
     };
+
     
     
 //  key position reference
@@ -115,33 +88,31 @@
             timeout-ms = <50>;
             key-positions = <LT3 LT2>;
             bindings = <&kp DEL>;
-            layers = <DEFAULT>;
+            layers = <DEFAULT NUML>;
         };
         combo_tab {
             timeout-ms = <50>;
             key-positions = <LM4 LM3>;
             bindings = <&kp TAB>;
-            layers = <DEFAULT>;
+            layers = <DEFAULT NUML>;
         };
          combo_enter_r {
             timeout-ms = <50>;
             key-positions = <RM2 RM3>;
             bindings = <&kp ENTER>;
-            layers = <DEFAULT>;
         };
          combo_enter_l {
             timeout-ms = <50>;
             key-positions = <LM2 LM3>;
             bindings = <&kp ENTER>;
-            layers = <DEFAULT NUML>;
         };
         combo_word_backspace {
             timeout-ms = <75>;
             key-positions = <LH1 RH1>;
-            bindings = <&wdel>;
-            layers = <DEFAULT>;
+            bindings = <&kp LC(BSPC)>;
+            layers = <DEFAULT NUML>;
         };
-        combo_pinkie_word_backspace {
+        combo_word_delete {
             timeout-ms = <50>;
             key-positions = <LM4 RM4>;
             bindings = <&kp LC(DEL)>;
@@ -153,17 +124,11 @@
             bindings = <&kp EQUAL>;
             layers = <RIGHTL NUML>;
         };
-        combo_divide {
-            timeout-ms = <50>;
-            key-positions = <LM0 LM1>;
-            bindings = <&kp SLASH>;
-            layers = <NUML>;
-        };
         combo_quote {
             timeout-ms = <50>;
             key-positions = <LB0 LB1>;
             bindings = <&kp DQT>;
-            layers = <NUML>;
+            layers = <RIGHTL NUML>;
         };
         combo_num_layer {
             timeout-ms = <50>;
@@ -175,12 +140,27 @@
             timeout-ms = <50>;
             key-positions = <LT2 LM2>;
             bindings = <&kp LC(F)>;
+            layers = <DEFAULT NUML>;
         };
         combo_at {
             timeout-ms = <40>;
             key-positions = <LM4 LM1>;
             bindings = <&kp AT>;
+            layers = <DEFAULT>;
         };
+        combo_next_tab {
+            timeout-ms = <40>;
+            key-positions = <LT0 LT1>;
+            bindings = <&kp LC(TAB)>;
+            layers = <DEFAULT>;
+        };
+        combo_previous_tab {
+            timeout-ms = <40>;
+            key-positions = <LM0 LM1>;
+            bindings = <&kp LC(LS(TAB))>;
+            layers = <DEFAULT>;
+        };
+
     };
     
     keymap {
@@ -198,7 +178,7 @@
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp K      &kp M   &pt SEMI COMMA  &pt COLON DOT  &pt EXCL FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |          |   |          |          |
-                                       &lt LEFTL BSPC &stt LSHIFT LSHIFT    &kp ENTER  &lt RIGHTL SPACE
+                              &lt LEFTL BSPC  &stt LSHIFT LSHIFT       &stt RSHIFT RSHIFT  &lt RIGHTL SPACE
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -212,8 +192,8 @@
         //│ /        │  4       │  5       │  6       │  *       │   │ PAGE DN  │ LEFT     │ DOWN     │ RIGHT    │  =       │
             &kp FSLH   &kp N4     &kp N5     &kp N6     &kp ASTRK      &kp PG_DN  &kp LARW   &kp DARW   &kp RARW   &kp EQUAL
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │  1       │  2       │  3       │  .       │   │ . >      │  +       │  -       │  *       │  /       │
-            &kp SPACE  &kp N1     &kp N2     &kp N3     &kp DOT        &kp DOT    &kp PLUS   &kp MINUS  &kp ASTRK  &kp SLASH
+        //│          │  1       │  2       │  3       │  .       │   │ *        │  +       │  -       │  .       │  /       │
+            &kp SPACE  &kp N1     &kp N2     &kp N3     &kp DOT        &kp ASTRK  &kp PLUS   &kp MINUS  &kp DOT    &kp SLASH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |  0       |   |          |          |
                                              &kp BSPC   &kp N0         &trans     &trans
@@ -230,8 +210,8 @@
         //│  !       │  @       │  #       │  $       │  %       │   │          │          │  =       │  \       │  '       │
             &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT      &trans     &trans     &kp EQUAL  &kp BSLH   &kp APOS
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  PSCRN   │CAPS WORD │CAPS LOCK │          │          │   │  &       │  _       │          │  │       │          │
-           &kp PSCRN  &caps_word  &kp CAPS     &trans     &trans         &kp AMPS   &kp UNDER  &trans     &kp PIPE   &trans
+        //│  PSCRN   │CAPS WORD │CAPS LOCK │          │          │   │  &       │  _       │          │  │       │  \       │
+           &kp PSCRN  &caps_word  &kp CAPS     &trans     &trans         &kp AMPS   &kp UNDER  &trans     &kp PIPE   &kp BSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |          |   |          |          |
                                              &trans     &trans         &trans     &trans
@@ -266,8 +246,8 @@
         //│  /       │  4       │  5       │  6       │  *       │   │ PAGE DN  │ LEFT     │ DOWN     │ RIGHT    │  =       │
             &kp SLASH  &kp N4     &kp N5     &kp N6     &kp ASTRK      &kp PG_DN  &kp LARW   &kp DARW   &kp RARW   &kp EQUAL
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │  1       │  2       │  3       │ .        │   │ . >      │  +       │  -       │  *       │  /       │
-            &kp SPACE  &kp N1     &kp N2     &kp N3     &kp DOT         &kp DOT    &kp PLUS   &kp MINUS  &kp ASTRK  &kp SLASH
+        //│          │  1       │  2       │  3       │ .        │   │ *        │  +       │  -       │  .       │  /       │
+            &kp SPACE  &kp N1     &kp N2     &kp N3     &kp DOT        &kp ASTRK  &kp PLUS   &kp MINUS  &kp DOT    &kp SLASH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |          |   |          |          |
                                              &kp BSPC   &kp N0         &trans     &trans
@@ -279,10 +259,10 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │          │          │          │          │          │
-            &none      &none      &none      &none      &none       &kp C_VOL_DN &kp C_VOL_UP &kp C_PP  &none      &none
+            &none      &none      &none      &none      &none      &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE &kp C_PP   &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
-            &none      &none      &none      &none      &none          &none      &none      &none      &none      &none 
+            &none      &none      &none      &none      &none      &kp C_BRI_DN  &kp C_BRI_UP &none     &none      &none 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
             &none      &none      &none      &none      &none          &none      &none      &none      &none      &none 
