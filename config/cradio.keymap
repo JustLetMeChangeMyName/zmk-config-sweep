@@ -168,14 +168,14 @@
         default_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  Q       │  W       │  F       │  P       │  G       │   │  J       │  L       │  U       │  Y       │          │
-            &kp Q      &kp W      &kp F      &kp P      &kp G          &kp J      &kp L      &kp U      &kp Y      &mo CONTL
+        //│  Q       │  W       │  F       │  P       │  G       │   │  J       │  L       │  U       │  Y       │  '       │
+            &kp Q      &kp W      &kp F      &kp P      &kp G          &kp J      &kp L      &kp U      &kp Y      &lt CONTL APOS
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  R       │  S       │  T       │  D       │   │  H       │  N       │  E       │  I       │  O       │
             &kp A      HRML(R,         S,         T)     &kp D         &kp H      HRMR(N,        E,         I)     &kp O
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Z       │  X       │  C       │  V       │  B       │   │  K       │  M       │ , ;      │ . :      │ / ?      │
-            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp K      &kp M   &pt SEMI COMMA  &pt COLON DOT  &pt EXCL FSLH
+        //│  Z       │  X       │  C       │  V       │  B       │   │  K       │  M       │ ,        │ .        │ / ?      │
+            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp K      &kp M      &kp COMMA  &kp DOT  &pt EXCL FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |          |   |          |          |
                               &lt LEFTL BSPC  &stt LSHIFT LSHIFT       &stt RSHIFT RSHIFT  &lt RIGHTL SPACE
@@ -190,13 +190,13 @@
             &kp MINUS  &kp N7     &kp N8     &kp N9     &kp PLUS       &kp PG_UP  &kp HOME   &kp UARW   &kp END    &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ /        │  4       │  5       │  6       │  *       │   │ PAGE DN  │ LEFT     │ DOWN     │ RIGHT    │  =       │
-            &kp FSLH   &kp N4     &kp N5     &kp N6     &kp ASTRK      &kp PG_DN  &kp LARW   &kp DARW   &kp RARW   &kp EQUAL
+            &kp FSLH   &kp N4  &ht LCTRL N5  &kp N6     &kp ASTRK      &kp PG_DN  &kp LARW   &kp DARW   &kp RARW   &kp EQUAL
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  1       │  2       │  3       │  .       │   │ *        │  +       │  -       │  .       │  /       │
             &kp SPACE  &kp N1     &kp N2     &kp N3     &kp DOT        &kp ASTRK  &kp PLUS   &kp MINUS  &kp DOT    &kp SLASH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |  0       |   |          |          |
-                                             &kp BSPC   &kp N0         &trans     &trans
+                                             &kp BSPC   &ht LSHIFT N0  &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -210,8 +210,8 @@
         //│  !       │  @       │  #       │  $       │  %       │   │          │          │  =       │  \       │  '       │
             &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT      &trans     &trans     &kp EQUAL  &kp BSLH   &kp APOS
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  PSCRN   │CAPS WORD │CAPS LOCK │          │          │   │  &       │  _       │          │  │       │  \       │
-           &kp PSCRN  &caps_word  &kp CAPS     &trans     &trans         &kp AMPS   &kp UNDER  &trans     &kp PIPE   &kp BSLH
+        //│  PSCRN   │CAPS WORD │CAPS LOCK │          │          │   │  &       │  _       │  ;       │  :       │  \       │
+           &kp PSCRN  &caps_word  &kp CAPS   &trans     &trans         &kp AMPS   &kp UNDER  &kp SEMI   &kp COLON   &kp BSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |          |   |          |          |
                                              &trans     &trans         &trans     &trans
@@ -244,22 +244,22 @@
             &kp MINUS  &kp N7     &kp N8     &kp N9     &kp PLUS       &kp PG_UP  &kp HOME   &kp UARW   &kp END    &mo CONTL
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  /       │  4       │  5       │  6       │  *       │   │ PAGE DN  │ LEFT     │ DOWN     │ RIGHT    │  =       │
-            &kp SLASH  &kp N4     &kp N5     &kp N6     &kp ASTRK      &kp PG_DN  &kp LARW   &kp DARW   &kp RARW   &kp EQUAL
+            &kp SLASH  &kp N4  &ht LCTRL N5  &kp N6     &kp ASTRK      &kp PG_DN  &kp LARW   &kp DARW   &kp RARW   &kp EQUAL
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  1       │  2       │  3       │ .        │   │ *        │  +       │  -       │  .       │  /       │
             &kp SPACE  &kp N1     &kp N2     &kp N3     &kp DOT        &kp ASTRK  &kp PLUS   &kp MINUS  &kp DOT    &kp SLASH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |          |   |          |          |
-                                             &kp BSPC   &kp N0         &trans     &trans
+                                             &kp BSPC   &ht LSHIFT N0  &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
         
-        contral_layer {
+        control_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │          │          │          │          │          │
-            &none      &none      &none      &none      &none      &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE &kp C_PP   &none
+            &sl SYSL   &none      &none      &none      &none      &kp C_VOL_DN &kp C_VOL_UP &kp C_MUTE &kp C_PP   &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
             &none      &none      &none      &none      &none      &kp C_BRI_DN  &kp C_BRI_UP &none     &none      &none 
