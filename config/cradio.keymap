@@ -134,7 +134,7 @@
             bindings = <&kp EQUAL>;
             layers = <RIGHTL NUML>;
         };
-        combo_quote
+        combo_quote {
             timeout-ms = <50>;
             key-positions = <LB0 LB1>;
             bindings = <&kp DQT>;
