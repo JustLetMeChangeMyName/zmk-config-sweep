@@ -55,7 +55,16 @@
             flavor = "hold-preferred";
             tapping-term-ms = <150>;
             bindings = <&kp>, <&sk>;
-        };        
+        };
+        swt: tab_switching {
+            compatible = "zmk,behavior-mod-morph";
+            label = "TAB_SWITCHING";
+            #binding-cells = <0>;
+            bindings = <&lt LEFTL BSPC>, <&kp TAB>;
+            mods = <(MOD_LCTL|MOD_LALT)>;
+            keep-mods = <(MOD_LCTL|MOD_LALT)>;
+        };
+
     };
 
 /*
@@ -115,7 +124,7 @@
         };
         combo_word_delete {
             timeout-ms = <50>;
-            key-positions = <LM4 RM4>;
+            key-positions = <LH0 RH0>;
             bindings = <&kp LC(DEL)>;
             layers = <DEFAULT>;
         };
@@ -125,7 +134,7 @@
             bindings = <&kp EQUAL>;
             layers = <RIGHTL NUML>;
         };
-        combo_quote {
+        combo_quote
             timeout-ms = <50>;
             key-positions = <LB0 LB1>;
             bindings = <&kp DQT>;
@@ -147,17 +156,17 @@
             timeout-ms = <40>;
             key-positions = <LM4 LM1>;
             bindings = <&kp AT>;
-            layers = <DEFAULT>;
+            layers = <DEFAULT RIGHTL NUML>;
         };
         combo_next_tab {
             timeout-ms = <40>;
-            key-positions = <LT0 LT1>;
+            key-positions = <LB2 LB1>;
             bindings = <&kp LC(TAB)>;
             layers = <DEFAULT>;
         };
         combo_previous_tab {
             timeout-ms = <40>;
-            key-positions = <LM0 LM1>;
+            key-positions = <LB3 LB2>;
             bindings = <&kp LC(LS(TAB))>;
             layers = <DEFAULT>;
         };
@@ -179,7 +188,7 @@
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp K      &kp M      &kp COMMA  &kp DOT  &pt EXCL FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |          |   |          |          |
-                              &lt LEFTL BSPC  &stt LSHIFT LSHIFT       &stt RSHIFT RSHIFT  &lt RIGHTL SPACE
+                                             &swt       &sk LSHIFT     &sk RSHIFT &lt RIGHTL SPACE
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
