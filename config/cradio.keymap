@@ -53,7 +53,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "hold-preferred";
-            tapping-term-ms = <150>;
+            tapping-term-ms = <50>;
             bindings = <&kp>, <&sk>;
         };
         swt: tab_switching {
@@ -188,7 +188,7 @@
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp K      &kp M      &kp COMMA  &kp DOT  &pt EXCL FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |          |   |          |          |
-                                             &swt       &sk LSHIFT     &sk RSHIFT &lt RIGHTL SPACE
+                                            &swt &stt LSHIFT LSHIFT &stt RSHIFT RSHIFT &lt RIGHTL SPACE
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
