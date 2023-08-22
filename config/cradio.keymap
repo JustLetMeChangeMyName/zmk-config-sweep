@@ -48,14 +48,14 @@
             tapping-term-ms = <180>;
             bindings = <&kp>, <&kp>;
         };
-        stt: sticky_tap {
-            label = "sticky_tap";
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <90>;
-            bindings = <&kp>, <&sk>;
-        };
+//      stt: sticky_tap {
+//          label = "sticky_tap";
+//          compatible = "zmk,behavior-hold-tap";
+//          #binding-cells = <2>;
+//          flavor = "hold-preferred";
+//          tapping-term-ms = <90>;
+//          bindings = <&kp>, <&sk>;
+//      };
         swt: tab_switching {
             compatible = "zmk,behavior-mod-morph";
             label = "TAB_SWITCHING";
@@ -101,18 +101,18 @@
             layers = <DEFAULT NUML>;
         };
         combo_tab {
-            timeout-ms = <50>;
+            timeout-ms = <45>;
             key-positions = <LM4 LM3>;
             bindings = <&kp TAB>;
             layers = <DEFAULT NUML>;
         };
          combo_enter_r {
-            timeout-ms = <50>;
+            timeout-ms = <35>;
             key-positions = <RM2 RM3>;
             bindings = <&kp ENTER>;
         };
          combo_enter_l {
-            timeout-ms = <50>;
+            timeout-ms = <35>;
             key-positions = <LM2 LM3>;
             bindings = <&kp ENTER>;
         };
@@ -153,7 +153,7 @@
             layers = <DEFAULT NUML>;
         };
         combo_at {
-            timeout-ms = <40>;
+            timeout-ms = <35>;
             key-positions = <LM4 LM1>;
             bindings = <&kp AT>;
             layers = <DEFAULT RIGHTL NUML>;
@@ -188,7 +188,7 @@
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp K      &kp M      &kp COMMA  &kp DOT  &pt EXCL FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |          |   |          |          |
-                                            &swt &stt LSHIFT LSHIFT &stt RSHIFT RSHIFT &lt RIGHTL SPACE
+                                             &swt       &kp LSHIFT     &kp RSHIFT &lt RIGHTL SPACE
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
