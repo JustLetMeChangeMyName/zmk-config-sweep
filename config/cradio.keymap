@@ -47,7 +47,7 @@
             flavor = "hold-preferred";
             tapping-term-ms = <220>;
             quick-tap-ms = <150>;
-            //global-quick-tap;
+            global-quick-tap;
             bindings = <&mo>, <&kp>;
         };
         pt: punctuation_tap {
