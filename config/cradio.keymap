@@ -206,7 +206,7 @@
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp K      &kp M      &kp COMMA  &kp DOT  &pt EXCL FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |          |   |          |          |
-                                             &swt       &kp LSHIFT     &kp RSHIFT &lt RIGHTL SPACE
+                                             &swt       &kp LSHIFT     &key_repeat &lt RIGHTL SPACE
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
