@@ -221,7 +221,7 @@
             &kp FSLH   &kp N4  &ht LCTRL N5  &kp N6     &kp ASTRK      &kp PG_DN  &kp LARW   &kp DARW   &kp RARW   &kp EQUAL
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  1       │  2       │  3       │  .       │   │ *        │  +       │  -       │  .       │  /       │
-            &kp SPACE  &kp N1     &kp N2     &kp N3     &kp DOT        &kp ASTRK  &kp PLUS   &kp MINUS  &kp DOT    &kp SLASH
+          &kp SPACE  &pt SPACE N1 &kp N2     &kp N3     &kp DOT        &kp ASTRK  &kp PLUS   &kp MINUS  &kp DOT    &kp SLASH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |  0       |   |          |          |
                                              &kp BSPC   &ht LSHIFT N0  &trans     &trans
@@ -238,8 +238,8 @@
         //│  !       │  @       │  #       │  $       │  %       │   │          │          │  =       │  \       │  '       │
             &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT      &trans     &trans     &kp EQUAL  &kp BSLH   &kp APOS
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  PSCRN   │CAPS WORD │CAPS LOCK │          │          │   │  &       │  _       │  ;       │  :       │  \       │
-    &kp PSCRN &pt PSCRN caps_word &kp CAPS   &trans     &trans         &kp AMPS   &kp UNDER  &kp SEMI   &kp COLON   &kp BSLH
+        //│  PSCRN   │CAPS WORD │CAPS LOCK │  PSCRN   │          │   │  &       │  _       │  ;       │  :       │  \       │
+            &kp PSCRN  &caps_word &kp CAPS   &kp PSCRN  &trans         &kp AMPS   &kp UNDER  &kp SEMI   &kp COLON   &kp BSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |          |   |          |          |
                                              &trans     &trans         &trans     &trans
@@ -275,7 +275,7 @@
             &kp SLASH  &kp N4  &ht LCTRL N5  &kp N6     &kp ASTRK      &kp PG_DN  &kp LARW   &kp DARW   &kp RARW   &kp EQUAL
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │  1       │  2       │  3       │ .        │   │ *        │  +       │  -       │  .       │  /       │
-            &kp SPACE  &kp N1     &kp N2     &kp N3     &kp DOT        &kp ASTRK  &kp PLUS   &kp MINUS  &kp DOT    &kp SLASH
+          &kp SPACE  &pt SPACE N1 &kp N2     &kp N3     &kp DOT        &kp ASTRK  &kp PLUS   &kp MINUS  &kp DOT    &kp SLASH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |          |   |          |          |
                                              &kp BSPC   &ht LSHIFT N0  &trans     &trans
