@@ -203,7 +203,7 @@
             &kp A      HRML(R,         S,         T)     &kp D         &kp H      HRMR(N,        E,         I)     &kp O
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  K       │  M       │ ,        │ .        │ / ?      │
-            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp K      &kp M      &kp COMMA  &kp DOT  &pt EXCL FSLH
+            &kp Z      &pt Z X    &kp C      &kp V      &kp B          &kp K      &kp M      &kp COMMA  &kp DOT    &pt EXCL FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |          |   |          |          |
                                              &swt       &kp LSHIFT     &key_repeat &lt RIGHTL SPACE
@@ -239,7 +239,7 @@
             &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT      &trans     &trans     &kp EQUAL  &kp BSLH   &kp APOS
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  PSCRN   │CAPS WORD │CAPS LOCK │          │          │   │  &       │  _       │  ;       │  :       │  \       │
-           &kp PSCRN  &caps_word  &kp CAPS   &trans     &trans         &kp AMPS   &kp UNDER  &kp SEMI   &kp COLON   &kp BSLH
+    &kp PSCRN &pt PSCRN caps_word &kp CAPS   &trans     &trans         &kp AMPS   &kp UNDER  &kp SEMI   &kp COLON   &kp BSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
         //                                 |          |          |   |          |          |
                                              &trans     &trans         &trans     &trans
