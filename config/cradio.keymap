@@ -48,6 +48,20 @@
             tapping-term-ms = <180>;
             bindings = <&kp>, <&kp>;
         };
+
+
+        ltt: layer_tap_with_rolling {
+            label = "layer_tap_with_rolling";
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <125>;
+            global-quick-tap;
+            bindings = <&mo>, <&kp>;
+        };
+
+
 //      stt: sticky_tap {
 //          label = "sticky_tap";
 //          compatible = "zmk,behavior-hold-tap";
@@ -197,7 +211,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  Q       │  W       │  F       │  P       │  G       │   │  J       │  L       │  U       │  Y       │  '       │
-            &kp Q      &kp W      &kp F      &kp P      &kp G          &kp J      &kp L      &kp U      &kp Y      &lt CONTL APOS
+            &kp Q      &kp W      &kp F      &kp P      &kp G          &kp J      &kp L      &kp U      &kp Y      &ltt CONTL APOS
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  R       │  S       │  T       │  D       │   │  H       │  N       │  E       │  I       │  O       │
             &kp A      HRML(R,         S,         T)     &kp D         &kp H      HRMR(N,        E,         I)     &kp O
