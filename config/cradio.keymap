@@ -34,7 +34,7 @@
             label = "hold_tap";
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "tap-preferred";
+            flavor = "balanced";
             tapping-term-ms = <220>;
             quick-tap-ms = <150>;
             global-quick-tap;
@@ -128,7 +128,7 @@
          combo_enter_l {
             timeout-ms = <35>;
             key-positions = <LM2 LM3>;
-            bindings = <&kp ENTER>;
+            bindings = <&ht LC(S) ENTER>;
         };
         combo_word_backspace {
             timeout-ms = <75>;
