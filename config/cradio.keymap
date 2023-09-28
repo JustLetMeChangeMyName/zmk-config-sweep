@@ -133,7 +133,7 @@
         combo_word_backspace {
             timeout-ms = <75>;
             key-positions = <LH1 RH1>;
-            bindings = <&kp LC(BSPC)>;
+            bindings = <&macro_word_bsp>;
             layers = <DEFAULT NUML>;
         };
         combo_word_delete {
@@ -203,6 +203,19 @@
             layers = <DEFAULT>;
         };
 
+    };
+
+
+    macros {
+        macro_word_bsp: macro_word_bsp {
+            label = "ZM_macro_word_backspace";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&kp LS(LC(LARW))>
+                  <&kp BSPC>
+                ;
+        };
     };
     
     keymap {
