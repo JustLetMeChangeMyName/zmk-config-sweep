@@ -213,7 +213,7 @@
             #binding-cells = <0>;
             bindings
                 = <&kp LS(LC(LARW))>
-                  <&kp BSPC>
+                , <&kp BSPC>
                 ;
         };
     };
